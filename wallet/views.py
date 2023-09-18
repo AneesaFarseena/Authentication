@@ -72,23 +72,7 @@ class ResetPassword(generics.GenericAPIView):
         return Response({"message":"Password reset complete"},
                         status=status.HTTP_200_OK,)
     
-# class BalanceView(ModelViewSet):    
-#     authentication_class = [JSONWebTokenAuthentication]
-#     allowed_method = ['get','post']
-#     serializer_class = BalanceSerializer
-
-#     def get_queryset(self):
-#         return User.objects.filter(email=self.request.user)
-    
-#     def create(self, request, *args, **kwargs):
-#         serializer = BalanceSerializer(data=request.data)
-#         if serializer.is_valid(raise_exception=True):
-#             with transaction.atomic():
-#                 User.objects.filter(email=self.request.user).update(
-#                     account_balance=F('account_balance') + serializer.validated_data.get('account_balance', 0))
-
-#                 return Response({'message':'Money added successfully'}, status=status.HTTP_201_CREATED)
-#         return Response(status=status.HTTP_400_BAD_REQUEST)            
+     
                 
     
 
